@@ -10,7 +10,7 @@ public class UserRegistrationTest {
     @Test
     public void givenFirstNameValid_shouldReturnTrue() {
         try {
-            boolean result = userRegistration.validFirstName("Poonam");
+            boolean result = userRegistration.validFirstName.validate("Poonam");
             Assertions.assertTrue(result);
             System.out.println("first name is valid");
         } catch (UserRegistrationException e) {
@@ -21,7 +21,7 @@ public class UserRegistrationTest {
     @Test
     public void givenFirstNameInvalid_shouldReturnFalse() {
         try{
-        boolean result = userRegistration.validFirstName("poonam");
+        boolean result = userRegistration.validFirstName.validate("poonam");
         Assertions.assertFalse(result);
         System.out.println("First name is valid");
     } catch(UserRegistrationException e) {
@@ -32,7 +32,7 @@ public class UserRegistrationTest {
     @Test
     public void givenLastNameValid_shouldReturnTrue() {
         try {
-            boolean result = userRegistration.validLastName("Desai");
+            boolean result = userRegistration.validLastName.validate("Desai");
             Assertions.assertTrue(result);
             System.out.println("lastname is valid");
         } catch (UserRegistrationException e) {
@@ -43,7 +43,7 @@ public class UserRegistrationTest {
         @Test
     public void givenLastNameInvalid_shouldReturnFalse() {
             try {
-                boolean result = userRegistration.validLastName("desai");
+                boolean result = userRegistration.validLastName.validate("desai");
                 Assertions.assertFalse(result);
                 System.out.println("Last name is Valid");
             } catch (UserRegistrationException e) {
@@ -54,7 +54,7 @@ public class UserRegistrationTest {
     @Test
     public void givenEmailValid_shouldReturnTrue() {
         try {
-            boolean result = userRegistration.validEmail("abc.xyz@bl.co.in");
+            boolean result = userRegistration.validEmail.validate("abc.xyz@bl.co.in");
             Assertions.assertTrue(result);
             System.out.println("Email is Valid");
         } catch (UserRegistrationException e) {
@@ -65,7 +65,7 @@ public class UserRegistrationTest {
     @Test
     public void givenEmailInvalid_shouldReturnFalse() {
         try {
-            boolean result = userRegistration.validEmail("loharpoonam98@gmail.com");
+            boolean result = userRegistration.validEmail.validate("loharpoonam98@gmail.com");
             Assertions.assertFalse(result);
             System.out.println("Email is valid");
         } catch (UserRegistrationException e) {
@@ -76,7 +76,7 @@ public class UserRegistrationTest {
     @Test
     public void givenMobileNoValid_shouldReturnTrue() {
         try {
-            boolean result = userRegistration.validMobFormat("91 9876567890");
+            boolean result = userRegistration.validMobFormat.validate("91 9876567890");
             Assertions.assertTrue(result);
             System.out.println("Mob No. is valid");
         } catch (UserRegistrationException e) {
@@ -87,7 +87,7 @@ public class UserRegistrationTest {
     @Test
     public void givenMobileNoInvalid_shouldReturnFalse() {
         try {
-            boolean result = userRegistration.validMobFormat("919876567890");
+            boolean result = userRegistration.validMobFormat.validate("919876567890");
             Assertions.assertFalse(result);
             System.out.println("Mob no. is valid");
         } catch (UserRegistrationException e) {
@@ -98,7 +98,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordRule1Valid_shouldReturnTrue() {
         try {
-            boolean result = userRegistration.validPasswordRule1("Poon@m15");
+            boolean result = userRegistration.validPasswordRule1.validate("Poon@m15");
             Assertions.assertTrue(result);
             System.out.println("Password Rule 1 is valid");
         } catch (UserRegistrationException e) {
@@ -109,7 +109,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordRule1Invalid_shouldReturnFalse() {
         try {
-        boolean result = userRegistration.validMobFormat("poonam");
+        boolean result = userRegistration.validMobFormat.validate("poonam");
         Assertions.assertFalse(result);
             System.out.println("Password Rule 1 is valid");
         } catch (UserRegistrationException e) {
@@ -120,7 +120,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordRule2Valid_shouldReturnTrue() {
         try{
-        boolean result = userRegistration.validPasswordRule2("Poonam@98");
+        boolean result = userRegistration.validPasswordRule2.validate("Poonam@98");
         Assertions.assertTrue(result);
             System.out.println("Password Rule 2 is valid");
         } catch (UserRegistrationException e) {
@@ -131,7 +131,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordRule2Valid_shouldReturnFalse() {
         try {
-            boolean result = userRegistration.validPasswordRule2("poonam@15");
+            boolean result = userRegistration.validPasswordRule2.validate("poonam@15");
             Assertions.assertFalse(result);
             System.out.println("Password Rule 2 is valid");
         } catch (UserRegistrationException e) {
@@ -142,7 +142,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordRule3Valid_shouldReturnTrue() {
         try{
-        boolean result = userRegistration.validPasswordRule3("Poon@m1598");
+        boolean result = userRegistration.validPasswordRule3.validate("Poon@m1598");
         Assertions.assertTrue(result);
             System.out.println("Password Rule 3 is valid");
         } catch (UserRegistrationException e) {
@@ -153,7 +153,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordRule3Invalid_shouldReturnFalse() {
         try{
-        boolean result = userRegistration.validPasswordRule3("poon@m15");
+        boolean result = userRegistration.validPasswordRule3.validate("poon@m15");
         Assertions.assertFalse(result);
             System.out.println("Password Rule 3 is valid");
         } catch (UserRegistrationException e) {
@@ -164,7 +164,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordRule4Valid_shouldReturnTrue() {
         try{
-        boolean result = userRegistration.validPasswordRule4("Poon@m15@desai");
+        boolean result = userRegistration.validPasswordRule4.validate("Poon@m15@desai");
         Assertions.assertTrue(result);
             System.out.println("Password Rule 4 is valid");
         } catch (UserRegistrationException e) {
@@ -174,7 +174,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordRule4Invalid_shouldReturnFalse() {
         try{
-        boolean result = userRegistration.validPasswordRule4("Poon@m15");
+        boolean result = userRegistration.validPasswordRule4.validate("Poon@m15");
         Assertions.assertFalse(result);
             System.out.println("Password Rule 4 is valid");
         } catch (UserRegistrationException e) {
